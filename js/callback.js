@@ -16,7 +16,7 @@ const parametro = new URLSearchParams(window.location.search);
             token: data.token,
             uid: data.uid,
             email: data.email
-        }, "https://luizagsoaress.github.io/NextPick");
+        }, "https://luizagsoaress.github.io/NextPickl");
 
         window.close();
         } else {

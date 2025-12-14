@@ -96,12 +96,12 @@
     window.open(authUrl, "_blank", "width=500,height=600"); 
 
     window.addEventListener("message", (event) => {
-      if (event.origin !== "https://luizagsoaress.github.io/NextPick/") return; 
+      if (event.origin !== "https://luizagsoaress.github.io") return; 
       const data = event.data;
       if (data.token) {
         localStorage.setItem("token", data.token);
         localStorage.setItem("uid", data.uid);
-        window.location.href = "main.html "; 
+        window.location.href = "main.html"; 
       }
     });
   }
