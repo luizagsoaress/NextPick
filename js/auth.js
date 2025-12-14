@@ -91,12 +91,12 @@
   
   function githubAcess(){
     const clientId = "Ov23li7mwsXVJSUAc3l9"; 
-    const redirectUri = "http://localhost:8080/callback.html"; 
+    const redirectUri = "https://luizagsoaress.github.io/NextPick/callback.html"; 
     const authUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=user:email`;
     window.open(authUrl, "_blank", "width=500,height=600"); 
 
     window.addEventListener("message", (event) => {
-      if (event.origin !== "http://localhost:8080") return; 
+      if (event.origin !== "https://luizagsoaress.github.io/NextPick/") return; 
       const data = event.data;
       if (data.token) {
         localStorage.setItem("token", data.token);
