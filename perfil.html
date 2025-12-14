@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="icon" type="image/svg" href="imagens/logo.svg">
+    <title>Meus dados</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <form class="formDados d-flex justify-content-center align-items-center flex-column">
+            <div class="dropdown">
+                <a href="#" class="nav-link avatar" data-bs-toggle="dropdown" >
+                    <img src="" class="avatar-img rounded-circle" ></img>
+                </a>
+                <div class="dropdown-menu-end dropdown-menu">
+                    <a href="#" class="dropdown-item avatar1 avatares"><img src="https://api.dicebear.com/9.x/dylan/svg?seed=Andrea" alt="avatar1"></a>
+                    <a href="#" class="dropdown-item avatar2 avatares"><img src="https://api.dicebear.com/9.x/dylan/svg?seed=Sara" alt="avatar2"></a>
+                    <a href="#" class="dropdown-item avatar3 avatares"><img src="https://api.dicebear.com/9.x/dylan/svg?seed=Oliver" alt="avatar3"></a>
+                    <a href="#" class="dropdown-item avatar4 avatares"><img src="https://api.dicebear.com/9.x/dylan/svg?seed=Vivian" alt="avatar4"></a>
+                    <a href="#" class="dropdown-item avatar5 avatares"><img src="https://api.dicebear.com/9.x/dylan/svg?seed=Luis" alt="avatar5"></a>
+                    <a href="#" class="dropdown-item avatar6 avatares"><img src="https://api.dicebear.com/9.x/dylan/svg?seed=Alexander" alt="avatar6"></a>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center mt-5 flex-column div-senha">
+                <div class="w-100 justify-content-start align-items-center mb-5">
+                    <a href="#" class="voltar-main fa-solid fa-arrow-left"></a>
+                </div>
+                <div class="d-flex w-100 mb-2">
+                    <label for="input-senha" class="label-senha">Senha</label>
+                </div>
+                <div class="d-flex justify-content-center align-items-center flex-row">
+                    <input type="text" class="input-senha" disabled placeholder="******">
+                    <a href="#" class="editar-senha">
+                        <i class="fa-solid fa-pencil ms-2 pencil-white"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center mt-4 flex-column div-email">
+                <div class="d-flex w-100 mb-2">
+                    <label for="input-email" class="label-email">Email</label>
+                </div>
+                <div class="d-flex justify-content-center align-items-center flex-row mb-5">
+                    <input type="text" class="input-email" disabled placeholder="**********">
+                    <a href="#" class="ban">
+                        <i class="fa-solid fa-ban ms-2 ban"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="d-flex w-100 justify-content-center align-items-center div-deletar">
+                <div class="d-flex w- justify-content-start align-items-center">
+                    <a href="#" class="deletar">Deletar conta</a>
+                </div>
+            </div>
+
+
+            <div class="editar-div d-none d-flex justify-content-center align-items-center mt-5 flex-column">
+                <div class="w-100 justify-content-start align-items-center">
+                    <a href="#" class="fa-solid fa-arrow-left voltar mb-5"></a>
+                </div>
+                <div class="d-flex w-100 mb-2">
+                    <label for="input-senha" class="label-senha">Senha nova (Minimo de 6 caracteres) <span class="required ms-2">*</span></label>
+                </div>
+                <div class="d-flex justify-content-center align-items-center flex-row">
+                    <input type="text" class="input-senha-nova"id="senhaNova" placeholder="******">
+                </div>
+                <div class="d-flex w-100 mt-4">
+                    <a href="#" class="confirmar">Confirmar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

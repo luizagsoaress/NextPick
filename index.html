@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" translate="no" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg" href="imagens/logo.svg">
+    <title>Inicio</title>
+</head>
+<body>
+    <div class="container-fluid p-0">
+    <header>
+        <nav>
+            <div class="d-flex align-items-center logo_nome">
+                <a href="main.html" style="text-decoration: none;" >
+                    <span class="next_span">NEXT<span class="pick_span">PICK</span></span>
+                </a>
+            </div>
+            <div class="d-flex align-items-center">
+                <p class="divider">|</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="inicio"><i class="fa-solid fa-house house me-2"></i>Inicio</a></li>
+                <li><a href="#" class="recomendar-filmes"><i class="fa-solid fa-ticket ticket me-2"></i>FIlmes recomendados</a></li>
+                <li><a href="#" class="recomendar-series"><i class="fa-solid fa-star star me-2"></i>Series recomendadas</a></li>
+            </ul>
+            <div class="dropdown ms-auto me-3">
+                <div class="icon-link rounded-pill">
+                <a href="#" class="nav-link dropdown-toggle">
+                    <i class="fa-solid fa-user i-link rounded-circle"></i>
+                </a>
+                <div class="dropdown-menu-end dropdown-menu">
+                    <div class="dropdown_custom_div gap-2">
+                        <span class="titulo">Já tem uma conta?</span>
+                        <span class="subtitulo">Entre com sua conta e salve filmes para ver depois</span>
+                    </div>
+                    <a href="login.html" type="button" class="dropdown-item entrar"><i></i>Entrar</a>
+                    <a href="#" type="button" class="dropdown-item sobre"  data-bs-toggle="modal" data-bs-target = "#sobreModal"><i></i>Sobre</a>
+                </div>
+                </div>
+            </div>
+
+            <div class="mobile-menu" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars bars"></i>
+            </div>
+        </nav>
+            <div class="mobile-nav" id="mobileNav">
+                <a href="index.html" onclick="closeMenu()">Inicio</a>
+                <a href="#" onclick="closeMenu()" class="recomendar-filmes">Filmes recomendados</a>
+                <a href="#" onclick="closeMenu()" class="recomendar-series">Series recomendadas</a>
+            </div>
+    </header>
+        
+        <div class="conteudo-banner">
+            <div class="banner">
+                <img src="https://media.themoviedb.org/t/p/w1920_and_h800_multi_faces/vMaKc5PwdKIIBt5q7JQjfgyESYT.jpg" alt="banner" id="bannerImg">
+            </div>
+            <div class="texto_custom">
+                <div class="texto_div">
+                    <span>Descubra seu novo filme ou série preferido(a) em 5 minutos!</span>
+                    <a href="login.html" class="btn_descobrir">Descobrir</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100 d-flex justify-content-center align-items-center flex-column d-none filmes_div">
+            <div class="w-100">
+                <label for="filme" class="mb-5 mt-5">Filmes populares recomendados para você</label>
+                <div class="w-100 filmes_posters"></div>
+            </div>
+        </div>
+
+        <div class="w-100 d-flex justify-content-center align-items-center flex-column d-none series_div">
+            <div class="w-100">
+                <label for="serie" class="mb-5">Séries bem avaliadas recomendadas para você</label>
+                <div class="w-100 series_posters"></div>
+            </div>
+        </div>
+        
+
+        <div class="modal fade" id="sobreModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Sobre o site</h5>
+            </div>
+            <div class="modal-body">
+                Esta página web foi desenvolvida como um projeto de estudo sobre HTML5, CSS e JavaScript. O banco de dados utilizado para a autenticação dos usuários e para o armazenamento de informações foi o <a href="https://firebase.google.com/">Firebase</a>. O codigo com as chaves privadas foi hospedado em um servidor Node.js com Express, que está em execução no <a href="https://render.com/">Render</a>.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+</html>

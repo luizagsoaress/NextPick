@@ -1,0 +1,562 @@
+:root {
+    --tmdbLightGreen: 30, 213, 169;
+    --tmdbLightBlue: 1, 180, 228;
+    --tmdbDarkBlue: 3, 37, 65;
+}
+
+body, html{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Source Sans Pro',Arial,sans-serif;
+    overflow: auto;
+    background-color: white;
+}
+
+* {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.container-fluid {
+    background-color: white;
+    min-height: 100vh;
+} 
+
+header {
+	top: 0;
+	width: 100%;
+	backdrop-filter: blur(20px);
+    position: relative;
+	z-index: 999 !important;
+	transition: all 0.3s ease;
+	background-color: black;
+    height: auto;
+}
+
+nav {
+    display: flex;
+	align-items: center;
+	padding: 1rem 2rem;
+	max-width: 100%;
+	margin: 0 auto;
+    height: 11dvh;
+    background-color: #000000;
+}
+
+.logo_nome span {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.next_span {
+    color: #01d277;             
+}
+
+.pick_span {
+    color: #ffffff;
+}
+
+.divider {
+    color: white; 
+    font-size: 25px; 
+    height: 25px; 
+    font-weight: 100px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.nav-links {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	list-style: none;
+	gap: 0.5rem;
+}
+
+.nav-links a {
+    display: flex;           
+    align-items: center; 
+    justify-content: center;    
+    gap: 0.5rem; 
+	color: rgba(255, 255, 255, 0.8);
+	text-decoration: none;
+	transition: all 0.3s ease;
+	position: relative;
+	padding: 0.6rem 1.2rem;
+	border-radius: 25px;
+	background: transparent;
+    font-weight: bold;
+    margin-top: 1rem;
+
+}
+
+.nav-links a:hover {
+	color: white;
+	background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-links a.active {
+	color: var(--dark);
+	background: linear-gradient(45deg, var(--primary), var(--accent));
+	font-weight: 600;
+}
+
+.nav-links a::after {
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 0;
+	height: 2px;
+	background: var(--primary);
+	transition: width 0.3s ease;
+	opacity: 0;
+}
+
+.nav-links a:hover::after {
+	width: 30px;
+	opacity: 1;
+}
+
+.nav-links a.active::after {
+	display: none;
+}
+
+.nav-link i {
+    color: white;
+    font-size: 18px;
+}
+
+.icon-link i {
+    color: white;
+    font-size: 20px;
+}
+
+.icon-link {
+    display: inline-flex;        
+    align-items: center;
+    justify-content: center;
+    width: 120px;                 
+    height: 55px;
+    text-decoration: none;      
+    background-color: #454545; 
+    border: none;
+}
+
+nav-expand .dropdown-menu.show {
+    border: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+nav .dropdown-menu {
+    background-color: #333333d8;
+    width: 14vw;
+    max-width: 200px;
+    height: auto;
+    border-radius: 12px;
+    padding: 1.5rem;
+    gap: 14px;
+}
+
+nav .notificacao {
+    background-color: #ffffff;
+    width: 15vw;
+    height: auto;
+    border-radius: 12px;
+    gap: 14px;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: 100% !important;      
+    bottom: auto !important;   
+    margin-top: .5rem;  
+    padding: 0;
+}
+
+nav .notificacao li h4 {
+    font-weight: 700;
+    font-size: 1.0em;
+    width: 100% ;
+    height: 3.0em;
+    padding-left: 0.75rem;
+    padding-top: 1.0rem;
+}
+
+nav .notificacao li p {
+    font-weight: 500;
+    font-size: 1.0em;
+}
+
+.notificacoes_div {
+    width: 100%;
+    height: 100%;
+}
+
+.opcoes_menu {
+    background-color: #ffffff;
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+    gap: 14px;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: 100% !important;      
+    bottom: auto !important;   
+    margin-top: .5rem;  
+    z-index: 1000;
+}
+
+.dropdown_custom_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: start;
+    width: 100%;
+}
+
+.dropdown_custom_div span {
+    color: white;
+    text-align: left;
+}
+
+.conf_span {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.dados_span {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.minha_conta {
+    background-color: white;
+    color: black;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.sair {
+    background-color: #d1022b;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.conta:hover {
+    background-color: #888888;
+    color: white;
+}
+
+.sair:hover {
+    background-color: #eb0331;
+    color: white;
+}
+
+.avatar {
+    width: 2.5em;                   
+    height: 2.5em;  
+    object-fit: cover;
+    background-color: rgb(255, 255, 255) !important;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-img {
+    display: flex;        
+    align-items: center;
+    justify-content: center;
+    width: 2.5em;                 
+    height: 2.5em;  
+    text-decoration: none;      
+}
+
+.minhaConta {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(135deg, rgba(10, 10, 15, 0.98), rgba(20, 20, 30, 0.98));
+	backdrop-filter: blur(20px);
+	z-index: 1000 !important;
+	padding-top: 80px;
+}
+
+.minhaConta.active {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.minhaConta a {
+	color: rgba(255, 255, 255, 0.9);
+	text-decoration: none;
+	font-size: 1.2rem;
+	margin: 0.5rem 0;
+	padding: 1rem 2rem;
+	border-radius: 30px;
+	transition: all 0.3s ease;
+	background: rgba(255, 255, 255, 0.03);
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	min-width: 250px;
+	text-align: center;
+	font-weight: 500;
+	position: relative;
+	overflow: hidden;
+}
+
+.minhaConta a::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+	transition: left 0.5s ease;
+    z-index: 1000 !important;
+}
+
+.minhaConta a:hover::before {
+	left: 100%;
+}
+
+.minhaConta a:hover {
+	background: rgba(255, 255, 255, 0.08);
+	border-color: rgba(0, 255, 255, 0.3);
+	color: white;
+	transform: scale(1.02);
+}
+
+.minhaConta a.active {
+	background: linear-gradient(45deg, var(--primary), var(--accent));
+	color: var(--dark);
+	font-weight: 600;
+	border-color: transparent;
+}
+
+.banner {
+    height: 50vh;
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+    overflow: hidden;
+    background-image: url("https://www.themoviedb.org/assets/2/v4/account_pipes/green-79a9507a08a7e5a9b8c643a69026fe46191c45972cb45b944ab4b5f8a9110b03.svg");
+    background-color: #000000ec;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.568);
+    z-index: 1;
+}
+
+.banner > * {
+  position: relative;
+  z-index: 2;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar img {
+    width: 150px;
+    height: 150px;
+}
+
+.usuario_infos {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.metadata {
+    color: rgba(255, 255, 255, 0.527);
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.selector {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 200px;
+    border-radius: 20px;
+    height: 30px;
+}
+
+.selector a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    padding-top: 10px;
+}
+
+.selector span {
+    color: black;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.underline_filmes {
+    height: 4px;
+    background-color: #01d277;
+    width: 60px;
+}
+
+.underline_series {
+    width: 60px;
+}
+
+.lista {
+    width: 100vw;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.meus_favoritos {
+    width: 100vw;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.meus_favoritos span {
+    color: black;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.lista_filme_div,
+.lista_serie_div  {
+    width: 75vw !important;
+    height: 300px !important;
+}
+
+.favoritos_filme_div,
+.favoritos_serie_div {
+    width: 75vw !important;
+    height: 300px !important;
+}
+
+.favoritos_filme,
+.favoritos_serie {
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+}
+
+.lista_filme,
+.lista_serie {
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+}
+
+.qtd_filmes_fav,
+.qtd_series_fav,
+.qtd_filmes_lista,
+.qtd_series_lista {
+    font-weight: 500 !important;
+    font-size: 14px !important;
+}
+
+.border {
+    border: 1px solid rgb(0, 0, 0) !important;
+}
+
+@media (max-width: 768px) {
+    .lista_filme_div,
+    .lista_serie_div  {
+        width: 75vw !important;
+        height: 55vh !important;
+    }
+
+    .favoritos_filme_div,
+    .favoritos_serie_div {
+        width: 75vw !important;
+        height: 55vh;
+    }
+
+    nav .dropdown-menu {
+        background-color: #333333d8;
+        width: 55vw;
+        height: auto;
+        border-radius: 12px;
+        padding: 1.5rem;
+        gap: 14px;
+    }
+
+    nav .notificacao {
+        background-color: #ffffff;
+        width: 15vw;
+        height: auto;
+        border-radius: 12px;
+        gap: 14px;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        top: 100% !important;      
+        bottom: auto !important;   
+        margin-top: .5rem;  
+        padding: 0;
+    }
+
+    nav .notificacao li h4 {
+        font-weight: 700;
+        font-size: 1.0em;
+        width: 100% ;
+        height: 3.0em;
+        padding-left: 0.75rem;
+        padding-top: 1.0rem;
+    }
+
+    nav .notificacao li p {
+        font-weight: 500;
+        font-size: 1.0em;
+    }
+
+    .notificacoes_div {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+@media (min-width: 1920px) {
+    nav {
+        height: 8vh;
+    }
+}
+
