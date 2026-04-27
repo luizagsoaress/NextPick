@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/perfil.css">
+    <link rel="icon" type="image/svg" href="../imagens/logo.svg">
+    <title>Meus dados</title>
+</head>
+<body>
+    <div class="container-fluid">
+    	<header>
+            <nav>
+                <div class="d-flex align-items-center logo_nome">
+                    <a href="main.html" style="text-decoration: none;" >
+                        <span class="next_span">NEXT<span class="pick_span">PICK</span></span>
+                    </a>
+                </div>
+                <div class="dropdown ms-auto me-3">
+                        <a href="#" class="nav-link avatar" data-bs-toggle="dropdown" >
+                            <img src="" class="avatar-img rounded-circle" ></img>
+                        </a>
+                    <div class="dropdown-menu-end dropdown-menu">
+                        <div class="dropdown_custom_div">
+                            <span class="conf_span"><i class="fa-solid fa-gear me-2"></i>Configurações</span>
+                            <span class="dados_span">Veja dados da sua conta ou desconecte-se </span>
+                        </div>
+                        <a href="#" type="button" class="dropdown-item minha_conta mt-4 mb-3" id="minha_conta" onclick="toggleConta()" >Minha conta</a>
+                        <a href="#" type="button" class="dropdown-item sair" >Sair</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <form class="formDados">
+            <div class="banner">
+    			<div class="avatar-selector border rounded-circle dropdown">
+        			<a href="#" class="nav-link avatar-selector" data-bs-toggle="dropdown">
+            			<img src="" class="avatar-img-selector"></img>
+        			</a>
+        			<div class="dropdown-menu-end dropdown-menu" style="z-index: 9999;">
+            			<a href="#" class="dropdown-item avatar1 avatares"><img src="https://api.dicebear.com/9.x/rings/svg?seed=Vivian" alt="avatar1"></a>
+            			<a href="#" class="dropdown-item avatar2 avatares"><img src="https://api.dicebear.com/9.x/rings/svg?seed=Luis" alt="avatar2"></a>
+            			<a href="#" class="dropdown-item avatar3 avatares"><img src="https://api.dicebear.com/9.x/rings/svg?seed=Christopher" alt="avatar3"></a>
+            			<a href="#" class="dropdown-item avatar4 avatares"><img src="https://api.dicebear.com/9.x/rings/svg?seed=Caleb" alt="avatar4"></a>
+            			<a href="#" class="dropdown-item avatar5 avatares"><img src="https://api.dicebear.com/9.x/rings/svg?seed=Chase" alt="avatar5"></a>
+            			<a href="#" class="dropdown-item avatar6 avatares"><img src="https://api.dicebear.com/9.x/rings/svg?seed=Oliver" alt="avatar6"></a>
+        			</div>
+    			</div>
+			</div>
+			
+            <div class="d-flex justify-content-center align-items-center mt-4 flex-column div-senha">
+                <div class="form-header">
+                    <a href="#" class="voltar-main"><i class="fa-solid fa-arrow-left"></i></a>
+                    <h1 class="form-titulo">Editar dados</h1>
+                </div>
+
+                <div class="form-card">
+                    <div class="field-group">
+                        <label for="input-senha" class="label-senha">Senha</label>
+                        <div class="field-row">
+                            <input type="password" class="input-senha" disabled placeholder="*********">
+                            <a href="#" class="editar-senha field-action">
+                                <i class="fa-solid fa-pencil pencil-white"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="form-divider"></div>
+
+                    <div class="field-group div-email">
+                        <label for="input-email" class="label-email">Email</label>
+                        <div class="field-row">
+                            <input type="text" class="input-email" disabled placeholder="**********">
+                            <a href="#" class="field-action field-action--disabled ban">
+                                <i class="fa-solid fa-ban ban"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="div-deletar">
+                <div class="deletar_card">
+                    <h1 class="deletar_card_titulo">Deletar conta</h1>
+                </div>
+                <div class="deletar_card_container">
+                    <div class="deletar_card_body">
+                        <div class="deletar_card_info">
+                            <span class="deletar_card_nome">Deletar minha conta</span>
+                            <span class="deletar_card_aviso">Uma vez que você deletar sua conta, não há como voltar atrás.</span>
+                        </div>
+                        <a href="#" class="deletar">Deletar conta</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="editar-div d-none d-flex justify-content-center align-items-center mt-5 flex-column">
+                <div class="w-100 justify-content-start align-items-center">
+                    <a href="#" class="fa-solid fa-arrow-left voltar mb-5"></a>
+                </div>
+                <div class="d-flex w-100 mb-2">
+                    <label for="input-senha" class="label-senha">Senha nova (Minimo de 6 caracteres) <span class="required">*</span></label>
+                </div>
+                <div class="d-flex justify-content-center align-items-center flex-row">
+                    <input type="text" class="input-senha-nova" id="senhaNova" placeholder="Digite a nova senha...">
+                </div>
+                <div class="d-flex w-100 mt-4">
+                    <a href="#" class="confirmar">Confirmar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="minhaConta" id="minhaConta">
+  		<div class="menu-header">
+    		<div class="avatar-menu"></div>
+    			<span class="menu-greeting">Minha conta</span>
+  			</div>
+  			<div class="menu-card">
+    			<a href="#" class="menu-item atualizar">Meus dados<span class="menu-arrow">›</span></a>
+    			<a href="#" class="menu-item favoritos">Favoritos<span class="menu-arrow">›</span></a>
+  			</div>
+  		<a href="#" class="btn-fechar" onclick="closeConta()">Fechar</a>
+	</div>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/perfil.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

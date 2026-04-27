@@ -1,0 +1,564 @@
+:root {
+    --tmdbLightGreen: 30, 213, 169;
+    --tmdbLightBlue: 1, 180, 228;
+    --tmdbDarkBlue: 3, 37, 65;
+}
+
+body, html{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Source Sans Pro',Arial,sans-serif;
+    overflow: auto;
+    background-color: white;
+}
+
+* {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.container-fluid {
+    background-color: white;
+    min-height: 100vh;
+} 
+
+header {
+	top: 0;
+	width: 100%;
+	backdrop-filter: blur(20px);
+    position: relative;
+	z-index: 999 !important;
+	transition: all 0.3s ease;
+	background-color: black;
+    height: auto;
+}
+
+nav {
+    display: flex;
+	align-items: center;
+	padding: 1rem 2rem;
+	max-width: 100%;
+	margin: 0 auto;
+    height: 11dvh;
+    background-color: #000000;
+}
+
+.logo_nome span {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.next_span {
+    color: #01d277;             
+}
+
+.pick_span {
+    color: #ffffff;
+}
+
+.nav-links {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	list-style: none;
+	gap: 0.5rem;
+}
+
+.nav-links a {
+    display: flex;           
+    align-items: center; 
+    justify-content: center;    
+    gap: 0.5rem; 
+	color: rgba(255, 255, 255, 0.8);
+	text-decoration: none;
+	transition: all 0.3s ease;
+	position: relative;
+	padding: 0.6rem 1.2rem;
+	border-radius: 25px;
+	background: transparent;
+    font-weight: bold;
+    margin-top: 1rem;
+
+}
+
+.nav-links a:hover {
+	color: white;
+	background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-links a.active {
+	color: var(--dark);
+	background: linear-gradient(45deg, var(--primary), var(--accent));
+	font-weight: 600;
+}
+
+.nav-links a::after {
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 0;
+	height: 2px;
+	background: var(--primary);
+	transition: width 0.3s ease;
+	opacity: 0;
+}
+
+.nav-links a:hover::after {
+	width: 30px;
+	opacity: 1;
+}
+
+.nav-links a.active::after {
+	display: none;
+}
+
+.nav-link i {
+    color: white;
+    font-size: 18px;
+}
+
+.icon-link i {
+    color: white;
+    font-size: 20px;
+}
+
+.icon-link {
+    display: inline-flex;        
+    align-items: center;
+    justify-content: center;
+    width: 120px;                 
+    height: 55px;
+    text-decoration: none;      
+    background-color: #454545; 
+    border: none;
+}
+
+nav-expand .dropdown-menu.show {
+    border: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+nav .dropdown-menu {
+    background-color: #333333d8;
+    width: 14vw;
+    max-width: 200px;
+    height: auto;
+    border-radius: 12px;
+    padding: 1.5rem;
+    gap: 14px;
+}
+
+.opcoes_menu {
+    background-color: #ffffff;
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+    gap: 14px;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: 100% !important;      
+    bottom: auto !important;   
+    margin-top: .5rem;  
+    z-index: 1000;
+}
+
+.dropdown_custom_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: start;
+    width: 100%;
+}
+
+.dropdown_custom_div span {
+    color: white;
+    text-align: left;
+}
+
+.conf_span {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.dados_span {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.minha_conta {
+    background-color: white;
+    color: black;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.sair {
+    background-color: #d1022b;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.conta:hover {
+    background-color: #888888;
+    color: white;
+}
+
+.sair:hover {
+    background-color: #eb0331;
+    color: white;
+}
+
+.avatar {
+    width: 37px;                   
+    height: 37px;  
+    object-fit: contain;
+    background-color: #1d1d1d !important;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-img {
+    display: flex;        
+    align-items: center;
+    justify-content: center;
+    width: 33px;                 
+    height: 33px;  
+    text-decoration: none;  
+}
+
+.minhaConta {
+  	display: none;
+  	position: fixed;
+  	top: 0; left: 0;
+  	width: 100%; 
+  	height: 100vh;
+  	background: rgba(255,255,255,0.15);
+  	backdrop-filter: blur(12px);
+  	z-index: 1001;
+  	padding-top: 80px;
+}
+
+.minhaConta.active {
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: flex-start;
+}
+
+.menu-header {
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	margin-bottom: 2rem;
+}
+
+.avatar-menu {
+  	width: 64px; 
+  	height: 64px;
+  	border-radius: 50%;
+  	background: rgba(0,0,0,1);
+  	border: 2px solid rgba(0,0,0,0.85);
+  	color: #fff;
+  	display: flex; 
+  	align-items: center; 
+  	justify-content: center;
+  	font-size: 22px; 
+  	font-weight: 500;
+  	margin-bottom: 0.75rem;
+}
+
+.menu-greeting {
+  	font-size: 0.85rem;
+  	color: #fff;
+  	letter-spacing: 0.04em;
+  	text-transform: uppercase;
+  	font-weight: 500;
+}
+.menu-card {
+  	background: rgba(255,255,255,0.90);
+  	border: 0.5px solid rgba(0,0,0,0.12);
+  	border-radius: 20px;
+  	padding: 0.5rem;
+  	min-width: 280px;
+  	margin-bottom: 1.3rem;
+}
+
+.menu-item {
+  	display: flex; 
+  	align-items: center; 
+  	gap: 14px;
+  	padding: 0.85rem 1rem;
+  	border-radius: 14px;
+  	text-decoration: none;
+  	color: rgba(0,0,0,0.8);
+  	font-size: 0.95rem; 
+  	font-weight: 500;
+  	transition: background 0.18s ease;
+}
+
+.menu-item + .menu-item {
+  	border-top: 0.5px solid rgba(0,0,0,0.12);
+}
+
+.menu-item:hover { 
+	background: rgba(0,0,0,0.05); 
+	color: black;
+}
+
+.menu-icon {
+  	width: 32px; height: 32px;
+  	border-radius: 8px;
+  	display: flex; 
+  	align-items: center; 
+  	justify-content: center;
+  	flex-shrink: 0;
+}
+
+.icon-dados { 
+	background: rgba(83,74,183,0.12); 
+}
+
+.icon-favoritos { 
+	background: rgba(212,83,126,0.12); 
+}
+
+.menu-arrow { 
+	margin-left: auto; 
+	color: rgba(0,0,0,0.25); 
+	font-size: 13px; 
+}
+
+.btn-fechar {
+  	display: flex; 
+  	align-items: center; 
+  	justify-content: center; 
+  	width: 280px;
+  	padding: 0.8rem 1rem;
+  	border-radius: 14px;
+  	background: rgba(0,0,0,0.80);
+  	border: none;
+  	color: #fff;
+  	font-size: 1.0rem; 
+  	font-weight: 600;
+  	cursor: pointer; 
+  	text-decoration: none;
+  	transition: background 0.18s ease;
+}
+
+.btn-fechar:hover { 
+	background: rgba(0,0,0,0.80);
+	color: #fff; 
+}
+
+.banner {
+    height: 40vh;
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+    overflow: hidden;
+    background-image: url("https://www.themoviedb.org/assets/2/v4/account_pipes/green-79a9507a08a7e5a9b8c643a69026fe46191c45972cb45b944ab4b5f8a9110b03.svg");
+    background-color: #0a0a0aec;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.568);
+    z-index: 1;
+}
+
+.banner > * {
+  position: relative;
+  z-index: 2;
+}
+
+.avatar-maior {
+    width: 135px;
+    height: 135px;
+    min-width: 135px;
+    min-height: 135px;
+    object-fit: cover;
+    background-color: rgba(39, 39, 39, 0.459) !important;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 1;
+}
+
+.avatarImg {
+    display: flex;        
+    align-items: center;
+    justify-content: center;
+    width: 110px;                 
+    height: 110px;
+}
+
+.usuario_infos {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.metadata {
+    color: rgba(255, 255, 255, 0.527);
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.selector {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 200px;
+    border-radius: 20px;
+    height: 30px;
+}
+
+.selector a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    padding-top: 10px;
+}
+
+.selector span {
+    color: black;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.underline_filmes {
+    height: 4px;
+    background-color: #01d277;
+    width: 60px;
+}
+
+.underline_series {
+    width: 60px;
+}
+
+.lista {
+    width: 100vw;
+    min-height: 40vh;
+    height: auto;
+    max-height: 40vh;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.meus_favoritos {
+    width: 100vw;
+    min-height: 40vh;
+    height: auto;
+    max-height: 40vh;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.lista_filme_div,
+.lista_serie_div  {
+    width: 75vw !important;
+    height: 100% !important;
+}
+
+.favoritos_filme_div,
+.favoritos_serie_div {
+    width: 75vw !important;
+    height: 100% !important;
+}
+
+.favoritos_filme,
+.favoritos_serie {
+    width: 100%;
+    height: 100% !important;
+    min-height: 300px !important;
+    gap: 10px;
+}
+
+.lista_filme,
+.lista_serie {
+    width: 100%;
+    height: 100% !important;
+    min-height: 300px !important;
+    gap: 10px;
+}
+
+.qtd_filmes_fav,
+.qtd_series_fav,
+.qtd_filmes_lista,
+.qtd_series_lista {
+    font-weight: 500 !important;
+    font-size: 14px !important;
+}
+
+.border {
+    border: 1px solid rgb(0, 0, 0) !important;
+}
+
+@media (max-width: 768px) {
+    .lista {
+        min-height: 50vh;
+        height: auto;
+        max-height: 50vh;
+    }
+
+    .meus_favoritos {
+        min-height: 50vh;
+        height: auto;
+        max-height: 50vh;
+    }
+
+    .lista_filme_div,
+    .lista_serie_div  {
+        width: 75vw !important;
+        height: 50vh !important;
+    }
+
+    .favoritos_filme_div,
+    .favoritos_serie_div {
+        width: 75vw !important;
+        height: 50vh;
+    }
+
+    nav .dropdown-menu {
+        background-color: #333333d8;
+        width: 55vw;
+        height: auto;
+        border-radius: 12px;
+        padding: 1.5rem;
+        gap: 14px;
+    }
+}
+
+
+@media (min-width: 1920px) {
+    nav {
+        height: 8vh;
+    }
+}
+
