@@ -10,7 +10,7 @@ Já na tela inicial, é possível receber recomendações dos filmes e séries m
 
 ![image](./imagens/githubFotos/github(3).png)
 
-**Como usar?**
+## Como usar?
 
 Ápos clicar em "descobrir" na tela inicial, você será redirecionado para o login. Se ainda não possuir uma conta, é possível criá-la de diferentes maneiras: Google Auth, Github, Email/Senha.
 
