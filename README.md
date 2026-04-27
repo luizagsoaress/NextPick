@@ -2,19 +2,19 @@
 
 NextPick é uma plataforma de recomendação de filmes e séries baseada na API do TMDB. Você pode pesquisar filmes, séries e pessoas, ver informações sobre diferentes obras, responder um questionário para receber sugestões personalizadas, salvar favoritos e muito mais.
 
-![image](.imagens/githubFotos/github(1).png)
+![image](./imagens/githubFotos/github(1).png)
 
 Já na tela inicial, é possível receber recomendações dos filmes e séries mais populares do cinema.
 
-![image](.imagens/githubFotos/github(2).png)
+![image](./imagens/githubFotos/github(2).png)
 
-![image](.imagens/githubFotos/github(3).png)
+![image](./imagens/githubFotos/github(3).png)
 
 **Como usar?**
 
 Ápos clicar em "descobrir" na tela inicial, você será redirecionado para o login. Se ainda não possuir uma conta, é possível criá-la de diferentes maneiras: Google Auth, Github, Email/Senha.
 
-![image](.imagens/githubFotos/github(4).png)
+![image](./imagens/githubFotos/github(4).png)
 
 Com tudo certo na autenticação, o usuário estará livre pra explorar diferentes partes do NextPick.
 
@@ -24,11 +24,11 @@ No início da página principal, já é possível encontrar e descobrir detalhes
 
 **Pesquisa**:
 
-![image](.imagens/githubFotos/github(5).png)
+![image](./imagens/githubFotos/github(5).png)
 
 No seguinte exemplo a procura foi por "star wars". Aqui você pode verificar filmes, pessoas e séries que de alguma forma, se relacionam com o termo pesquisado.
 
-![image](.imagens/githubFotos/github(9).png)
+![image](./imagens/githubFotos/github(9).png)
 
 **Informações**:
 
@@ -51,19 +51,19 @@ Clicando em cima de um poster, uma página contendo informações da obra corres
 
 As informações mostradas variam para séries e filmes.
 
-![image](.imagens/githubFotos/github(10).png)
+![image](./imagens/githubFotos/github(10).png)
 
 **Recomendações personalizadas**:
 
 Responda a um questionario de no máximo 6 perguntas, e uma lista de recomendações será exibida, baseada nas suas preferências e escolhas. 
 
-![image](.imagens/githubFotos/github(6).png)
+![image](./imagens/githubFotos/github(6).png)
 
 **Favoritos/Lista**:
 
 Clicando no ícone de avatar, e depois em "Minha conta", um menu será aberto. Selecione "favoritos" e uma página exibindo todos os filmes/séries 'listados' e 'favoritados' abrirá.
 
-![image](.imagens/githubFotos/github(7).png)
+![image](./imagens/githubFotos/github(7).png)
 
 **Editar dados**:
 
@@ -75,7 +75,7 @@ Você pode:
 - mudar a sua senha
 - deletar a conta permanentemente
 
-![image](.imagens/githubFotos/github(8).png)
+![image](./imagens/githubFotos/github(8).png)
 
 ## Funcionalidades
 
