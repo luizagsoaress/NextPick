@@ -12,7 +12,7 @@ async function deletarConta() {
       }, 3000);
     } else {
       firebaseError = data.error;
-      toastr.erro(firebaseError);
+      toastr.falha(firebaseError);
     }
 }
 
@@ -89,7 +89,7 @@ const banBtn = document.querySelector(".ban");
 if(banBtn){
     banBtn.addEventListener("click", async function(event) {
       event.preventDefault();
-      toastr.erro("Não é possivel alterar o email.");
+      toastr.falha("Não é possivel alterar o email.");
     });
 }
 
@@ -103,7 +103,7 @@ async function salvarFoto(foto) {
     if(data.success){
       toastr.sucesso("Foto alterada com sucesso.");
     } else {
-      toastr.erro("Erro ao alterar foto.");
+      toastr.falha("Erro ao alterar foto.");
     }
 } 
 
@@ -146,8 +146,8 @@ async function pegarUsuario(){
     if(data.success){
     	return data;
     }  else {
-      firebaseError = data.error;
-      toastr.erro(firebaseError);
+      let firebaseError = data.error;
+      toastr.falha(firebaseError);
       return;
     }
 }
